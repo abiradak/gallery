@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Gallary</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding *ngIf="isEdit === false">
+  <div class="container">
+    <div class="top-srch">
+      
+        <div class="search-form">
+          
+          <input type="text" [(ngModel)]="query" class="form-control" (keyup) = "search()" placeholder="search here">
+          <button type="button" class="cstm-srch" (click) = "search()"><i class="fa fa-search"></i></button>
+        
+        </div>
+      <div class="right-select">
+        <i class="fa fa-bars" *ngIf="openmodal === false" (click) ="open()"></i>
+        <i class="fa fa-bars" *ngIf="openmodal === true" (click) ="close()"></i>
+        <div *ngIf="openmodal === true" class="overlap-sec">
+          <h6>Sort By</h6>
+          <p (click) = "date()" >Date</p>
+          <p (click) = "caption()">Caption</p>
+          <div *ngIf="fordate === true">
+            <p (click) = "sortAssdate()">Assending</p>
+            <p (click) = "sortDesdate()">Decending</p>
+          </div>
+          <div *ngIf="forcap === true">
+            <p (click) = "sortAssCap()">Assending(a-z)</p>
+            <p (click) = "sortDesCap()">Decending(z-a)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="gallery-box">
+      <div class="single-img" *ngFor="let item of dataArray; let i = index;">
+        <img src="{{ item.image }}" (click) = "edit(item , i)">
+        <p>{{ item.caption }}</p>
+      </div>
+      <!-- <div class="single-img">
+        <img src="../../assets/imgs/logo.png">
+        <p>abir</p>
+      </div>
+      <div class="single-img">
+        <img src="../../assets/imgs/logo.png">
+        <p>abir</p>
+      </div>
+      <div class="single-img">
+        <img src="../../assets/imgs/logo.png">
+        <p>abir</p>
+      </div> -->
+    </div>
+    
+  </div>
+</ion-content>
+
+<ion-content *ngIf="isEdit === true">
+  <img *ngIf="id" class="imglogo" src="{{ id }}">
+    <input type="text" [(ngModel)]="ecaption" style="margin-top: 40px;" class="form-control" placeholder="Enter Caption">
+    <div class="button-sec d-flex justify-content-between" style="text-align: center;">
+      <button class="btn btn-success cust3" (click) = "update()">Save</button>
+      <button class="btn btn-danger cust4" (click) = "delete()">delete</button>
+    </div>
+</ion-content>

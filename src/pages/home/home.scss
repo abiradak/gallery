@@ -1,0 +1,74 @@
+
+.top-srch {
+    width: 100%;
+}
+
+.search-form {
+    width: 80%;
+    float: left;
+    position: relative;
+}
+
+button.cstm-srch {
+    position: absolute;
+    background: transparent;
+    border: none;
+    top: 3px;
+    right: 3px;
+    padding: 8px;
+}
+
+.right-select {
+    width: 20%;
+    float: left;
+    text-align: right;
+    position: relative;
+}
+
+.single-img {
+    width: 33.33%;
+    float: left;
+    text-align: center;
+    margin: 5px 0px;
+}
+
+.overlap-sec {
+    position: absolute;
+    width: 130px;
+    height: 150px;
+    background: #fff;
+    -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    color: #000;
+    z-index: 1;
+    top: 28px;
+    right: -23px;
+    text-align: left;
+    padding: 7px;
+}
+
+
+
+
+.imglogo {
+    height: 300px;
+    margin-left: 41px;
+    margin-top: 39px;
+}
+.cust1 {
+    margin-top: 30px;
+    margin-left: 100px;
+} 
+.cust2 {
+    margin-left: 35px;
+    margin-top: 30px;
+}  
+.cust3 {
+    margin-top: 50px;
+    margin-left: 20px;
+}
+
+.cust4 {
+    margin-top: 50px;
+    margin-left: 62px;
+}

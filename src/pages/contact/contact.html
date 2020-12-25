@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Add Image
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <img *ngIf="!image" class="imglogo" src="../../assets/imgs/logo.jpg">
+  <img *ngIf="image" class="imglogo" src="{{ image }}">
+  <button class="btn btn-success cust1" (click) = "saveFormCamera()">camera</button>
+  <button class="btn btn-primary cust2" (click) = "saveFormBrowse()">Browse</button>
+    <input type="text" [(ngModel)]="caption" style="margin-top: 40px;" class="form-control" placeholder="Enter Caption">
+    <div class="button-sec d-flex justify-content-between" style="text-align: center;">
+      <button class="btn btn-success cust3" (click) = "save()">Save</button>
+      <button class="btn btn-primary cust4" (click) = "clear()">Clear</button>
+    </div>
+</ion-content>
